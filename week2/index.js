@@ -145,20 +145,18 @@ const gymCoach = {
     {
       name: "王教練",
       expertise: ["力量訓練", "減重課程"],
-      course: [
-        {
-          singleCourse: {
-            price: 2000,
-            classMinutes: 60,
-            isActive: true,
-          },
-          teamCourse: {
-            price: 1500,
-            classMinutes: 90,
-            isActive: false,
-          },
+      course: {
+        singleCourse: {
+          price: 2000,
+          classMinutes: 60,
+          isActive: true,
         },
-      ],
+        teamCourse: {
+          price: 1500,
+          classMinutes: 90,
+          isActive: false,
+        },
+      },
       intro:
         "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
       isAvailable: true,
@@ -166,20 +164,18 @@ const gymCoach = {
     {
       name: "李教練",
       expertise: ["瑜伽", "體態雕塑"],
-      course: [
-        {
-          singleCourse: {
-            price: 1800,
-            classMinutes: 50,
-            isActive: false,
-          },
-          teamCourse: {
-            price: 1200,
-            classMinutes: 75,
-            isActive: true,
-          },
+      course: {
+        singleCourse: {
+          price: 1800,
+          classMinutes: 50,
+          isActive: false,
         },
-      ],
+        teamCourse: {
+          price: 1200,
+          classMinutes: 75,
+          isActive: true,
+        },
+      },
       intro:
         "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
       isAvailable: false,

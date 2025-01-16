@@ -53,8 +53,9 @@ let giftPriceRule = 1599; /* 贈品消費門檻 */
 let BobPrice = 1800; /* Bob 消費金額 */
 let BobIsVip = false; /* Bob 是否為 VIP */
 
+// BobIsVip 是布林值，本身就會 呈現 true 或 false 不用寫 >1
 const getResult = () => {
-  if (BobPrice > giftPriceRule || BobIsVip > 1) {
+  if (BobPrice > giftPriceRule || BobIsVip) {
     giftNum -= 1;
     console.log(`已獲得贈品資格，贈品剩${giftNum}個`);
   } else {
@@ -85,9 +86,10 @@ const calcBonus = (coachIncome) => {
   const bonusLv2 = coachIncome * 0.15;
   const bonusLv3 = coachIncome * 0.2;
 
-  if (coachIncome < 100000) {
+  // 「超過」不含本身的值，「以上、以下」含本身的值
+  if (coachIncome <= 100000) {
     coachBonus += bonusLv1;
-  } else if (coachIncome >= 100000 && coachIncome < 300000) {
+  } else if (coachIncome > 100000 && coachIncome <= 300000) {
     coachBonus += bonusLv2;
   } else {
     coachBonus += bonusLv3;
@@ -141,6 +143,9 @@ if (playerA === playerB) {
 */
 
 const gymCoach = {
+  name: "高雄市健身教練聯盟",
+  location: "高雄市",
+  description: "專注於提供高品質的健身指導服務",
   coach: [
     {
       name: "王教練",
